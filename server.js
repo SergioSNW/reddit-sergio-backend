@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import cors from 'cors';
-import { getRedditToken } from '../otherFunctions/getRedditToken.js';
+import { getRedditToken } from 'getRedditToken.js';
 
 const app = express();
 app.use(cors()); // Allow all origins for development
