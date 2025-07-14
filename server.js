@@ -11,8 +11,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
-  console.log('Client ID set:', !!process.env.REDDIT_SERGIO_CLIENT_ID);
-  console.log('Secret set:', !!process.env.REDDIT_SERGIO_SECRET);
+  console.log('Client ID set:', process.env.REDDIT_SERGIO_CLIENT_ID);
+  console.log('Secret set:', process.env.REDDIT_SERGIO_SECRET);
 });
 
 app.get('/api/reddit-token', async (req, res) => {
@@ -31,8 +31,11 @@ app.get('/api/reddit-token', async (req, res) => {
       body: 'grant_type=client_credentials',
     });
 
-    const data = await response.json();
-    console.log('Reddit response:', data);
+    const text = await response.json();
+    console.log('Reddit response:', text);
+
+    let data;
+    data = JSON.parse(text);
     res.json(data);
   } catch (error) {
     res
