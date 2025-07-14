@@ -31,7 +31,7 @@ app.get('/api/reddit-token', async (req, res) => {
       body: 'grant_type=client_credentials',
     });
 
-    const text = await response.json();
+    const text = await response.text();
     console.log('Reddit response:', text);
 
     let data;
