@@ -26,7 +26,8 @@ app.get('/api/reddit-token', async (req, res) => {
       headers: {
         Authorization: `Basic ${credentials}`,
         'Content-Type': 'application/x-www-form-urlencoded',
-        'User-Agent': 'sergio-client/0.1 by SergioTom',
+        'User-Agent':
+          'Mozilla/5.0 (compatible; SergioBot/1.0; +https://reddit-sergio-backend.onrender.com/)',
       },
       body: 'grant_type=client_credentials',
     });
