@@ -9,6 +9,8 @@ const express = require('express');
 const cors = require('cors');
 const { getRedditToken } = require('./getRedditToken');
 
+dotenv.config();
+
 const app = express();
 app.use(cors()); // Allow all origins for development
 
