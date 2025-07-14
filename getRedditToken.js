@@ -3,7 +3,9 @@
 
 export const getRedditToken = async () => {
   // const credentials = btoa(`${clientId}:${secret}`);
-  const response = await fetch('http://localhost:5050/api/reddit-token');
+  const response = await fetch(
+    'https://reddit-sergio-backend.onrender.com/api/reddit-token'
+  );
   //, {
   //   method: 'GET',
   //   headers: {

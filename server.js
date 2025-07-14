@@ -32,6 +32,7 @@ app.get('/api/reddit-token', async (req, res) => {
     });
 
     const data = await response.json();
+    console.log('Reddit response:', data);
     res.json(data);
   } catch (error) {
     res
