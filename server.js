@@ -34,9 +34,16 @@ app.get('/api/reddit-token', async (req, res) => {
     const text = await response.text();
     console.log('Reddit response:', text);
 
-    let data;
-    data = JSON.parse(text);
-    res.json(data);
+    try {
+      const data = JSON.parse(text);
+      res.json(data);
+    } catch (e) {
+      // Reddit returned HTML (error page)
+      res.status(500).json({
+        error: 'Failed to fetch Reddit token',
+        details: text, // Return the actual HTML/error for debugging
+      });
+    }
   } catch (error) {
     res
       .status(500)
