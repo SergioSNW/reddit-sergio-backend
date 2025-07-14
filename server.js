@@ -11,6 +11,8 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
+  console.log('Client ID set:', !!process.env.REDDIT_SERGIO_CLIENT_ID);
+  console.log('Secret set:', !!process.env.REDDIT_SERGIO_SECRET);
 });
 
 app.get('/api/reddit-token', async (req, res) => {
@@ -80,4 +82,6 @@ app.post('/api/search-subreddits', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5050;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () =>
+  console.log(`Server running on port ${PORT}`)
+);
