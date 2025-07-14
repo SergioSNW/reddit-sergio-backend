@@ -1,7 +1,8 @@
 // const clientId = process.env.REDDIT_SERGIO_CLIENT_ID;
 // const secret = process.env.REDDIT_SERGIO_SECRET;
 
-export const getRedditToken = async () => {
+// export
+const getRedditToken = async () => {
   // const credentials = btoa(`${clientId}:${secret}`);
   const response = await fetch(
     'https://reddit-sergio-backend.onrender.com/api/reddit-token'
@@ -18,3 +19,5 @@ export const getRedditToken = async () => {
   const data = await response.json();
   return data.access_token; // This token will be used in the API requests.
 };
+
+module.exports = { getRedditToken };
