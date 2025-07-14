@@ -10,7 +10,7 @@ app.use(cors()); // Allow all origins for development
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World! from the backend Repo.');
   console.log('Client ID set:', process.env.REDDIT_SERGIO_CLIENT_ID);
   console.log('Secret set:', process.env.REDDIT_SERGIO_SECRET);
 });
